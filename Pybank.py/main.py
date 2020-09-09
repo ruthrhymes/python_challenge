@@ -37,5 +37,12 @@ print (f"Average Change: {round(sum(change)/len(change),2)}")
 print (f"Greatest Increase in Profits: {months[month_increase]} (${(str(increase))})")
 print (f"Greatest Decrease in Profits: {months[month_decrease]} (${(str(decrease))})")
    
-
- 
+csvpath_output = os.path.join("outfile.txt")
+with open(csvpath_output, "w") as txt_file:
+    txt_file.write ("Financial Analysis")
+    txt_file.write ("------------------------")
+    txt_file.write (f"Total Months:{len(months)}")
+    txt_file.write (f"Total: ${sum(profit)}")
+    txt_file.write (f"Average Change: {round(sum(change)/len(change),2)}")
+    txt_file.write (f"Greatest Increase in Profits: {months[month_increase]} (${(str(increase))})")
+    txt_file.write (f"Greatest Decrease in Profits: {months[month_decrease]} (${(str(decrease))})")
